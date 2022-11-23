@@ -1,0 +1,33 @@
+public class UniqueCharactersInString {
+    
+    public static void main(String[] args) {
+        String s = "abcde";
+
+        int i = 0;
+        int j = s.length() - 1;
+
+        boolean flag = true;
+
+        while (true) {
+            if (i == s.length() - 1)
+                break;
+            // DUPLICATE FOUND
+            if (i != j && s.charAt(i) == s.charAt(j)) {
+                flag = false;
+                break;
+            } else {
+                j--;
+                // COMPARING DONE AGAINST i-TH CHAR TO ALL OTHER CHARS, INCREMENT i NOW
+                if (j == 0) {
+                    j = s.length() - 1;
+                    i += 1;
+                }
+            }
+        }
+
+        if (flag)
+            System.out.println("unique");
+        else
+            System.out.println("non-unique");
+    }
+}

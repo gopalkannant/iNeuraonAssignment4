@@ -1,0 +1,36 @@
+
+import java.util.*;
+
+public class RemoveDuplicatesInString {
+
+    public static String unique(String s)
+    {
+        String str = new String();
+        int len = s.length();
+
+       
+        for (int i = 0; i < len; i++)
+        {
+            
+            char c = s.charAt(i);
+
+           if (str.indexOf(c) < 0)
+            {
+                // adding c to str if -1 is returned
+                str += c;
+            }
+        }
+
+        return str;
+    }
+
+
+    public static void main(String[] args)
+    {
+        // Input string with repeating chars
+        String s = "WelcomeWelcome";
+
+        System.out.println(unique(s));
+    }
+}
+

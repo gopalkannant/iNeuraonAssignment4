@@ -1,0 +1,38 @@
+import java.util.*;
+
+public class GFG {
+
+
+    static String checkPalindrome(int x)
+    {
+        String convertedNumber = String.valueOf(x);
+
+        // reversing the string using StringBuilder
+        StringBuilder reverseString = new StringBuilder();
+
+        // append a string into StringBuilder input1
+        reverseString.append(convertedNumber);
+
+        // reverse StringBuilder
+        reverseString.reverse();
+
+        // comparing the reversed string and the number
+        return (reverseString.toString())
+                .equals(convertedNumber)
+                ? "Yes"
+                : "No";
+    }
+
+    // Driver code
+    public static void main(String[] args)
+    {
+
+        // Some Testcases...
+        int num = 2552;
+        System.out.println(checkPalindrome(num)); // Yes
+
+        int number = 255;
+        System.out.println(checkPalindrome(number)); // No
+    }
+}
+
